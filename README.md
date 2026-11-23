@@ -34,6 +34,16 @@ uv run inspect eval src/inspect_rag_multihop/tasks.py@multihop_rag_qa \
     --limit 20
 ```
 
+For an OpenAI-compatible server that does not implement the Responses API
+(vLLM, LM Studio, ...), pass the base URL and disable that API:
+
+```bash
+uv run inspect eval src/inspect_rag_multihop/tasks.py@multihop_rag_qa \
+    --model openai/<served-model-name> \
+    --model-base-url http://<host>:<port>/v1 \
+    -M responses_api=false
+```
+
 Task options:
 
 | Option | Default | Meaning |
