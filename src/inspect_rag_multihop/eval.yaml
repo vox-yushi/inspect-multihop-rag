@@ -1,0 +1,24 @@
+title: "MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries"
+description: |
+  MultiHop-RAG evaluates retrieval and multi-hop reasoning over a corpus of 609
+  news articles. Each of the 2,556 queries requires evidence from 2-4 documents,
+  and 301 queries are unanswerable. The retrieval task scores BM25 passages with
+  Hits@4, Hits@10, MAP@10 and MRR@10; the QA task retrieves the top 10 passages
+  and scores answer accuracy, including the unanswerable queries.
+arxiv: https://arxiv.org/abs/2401.15391
+group: Knowledge
+contributors:
+  - vox-yushi
+version: "1-A"
+tasks:
+  - name: multihop_rag_retrieval
+    dataset_samples: 2255
+  - name: multihop_rag_qa
+    dataset_samples: 2556
+
+external_assets:
+  - type: huggingface
+    source: yixuantt/MultiHopRAG
+    fetch_method: hf_hub_download
+    state: pinned
+    comment: "revision 71ac0d0bd1f951d2d6b70311f7d2ae404e1ffa82; SHA256 verified in dataset.py"
