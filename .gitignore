@@ -9,3 +9,6 @@ build/
 *.egg-info/
 .idea/
 .vscode/
+.env
+.env.local
+.env.*.local
